@@ -20,8 +20,9 @@ CostLarge = 12000
 # Get user input
 Seat = int(input("Please input seat number: "))
 
-
-if Seat <= SizeSmall:       #check if user input is valid for Small Size Seat Capacity
+if Seat <= 0:
+    print("Please input a whole number and not less than or equal 0")
+elif Seat <= SizeSmall and not Seat <= 0:       #check if user input is valid for Small Size Seat Capacity
     print("S x 1")
     print("Total = PHP " + str(CostSmall))
 elif Seat <= SizeMedium:    #check if user input is valid for Medium Size Seat Capacity
@@ -30,7 +31,6 @@ elif Seat <= SizeMedium:    #check if user input is valid for Medium Size Seat C
 elif Seat <= SizeLarge:     #check if user input is valid for Large Size Seat Capacity
     print("L x 1")
     print("Total = PHP " + str(CostLarge))
-
 
 # check for the optimized cost if user input is exceeded to the large seat capacity
 else:
